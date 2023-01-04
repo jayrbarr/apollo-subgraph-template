@@ -3,15 +3,28 @@ extend schema
         import: ["@key"])
 
 type Query {
-    books: [Book]
+    login: Login
     user: User
+    bill: [Bill]
 }
 
-type Book {
-    title: String
-    author: String
+type Login {
+    date: String
+    specials: [String]
 }
 
 type User {
-    token: String
+    first: String
+    last: String
+    msisdn: Int
+    socsec: Int
+}
+
+type Bill {
+    billDate: String
+    dueDate: String
+    totalDue: Float
+    pastDue: Float
+    autoPay: Boolean
+    creditCard: Int
 }
