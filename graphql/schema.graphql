@@ -13,14 +13,16 @@ type Login {
     specials: [String]
 }
 
-type User {
+type User @key(fields: "id") {
+    id: ID!
     first: String
     last: String
     msisdn: Int
     socsec: Int
 }
 
-type Bill {
+type Bill @key(fields: "id") {
+    id: ID!
     billDate: String
     dueDate: String
     totalDue: Float
